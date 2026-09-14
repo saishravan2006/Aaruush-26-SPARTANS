@@ -1,0 +1,29 @@
+SOCIAL ENGINE — EDA KEY INSIGHTS
+Generated: 2026-09-14T15:11:50.878969
+============================================================
+
+[PLATFORM] YouTube leads with 2,074 posts (17.3%)
+[PLATFORM] 14.9% of posts have missing platform data due to corruption
+[PLATFORM] All 5 platforms (YouTube, Facebook, Twitter, Reddit, Instagram) have roughly equal share (~17-18% each)
+[TEMPORAL] Peak posting month: May 2024 (1,038 posts)
+[TEMPORAL] Most active day: Wed
+[TEMPORAL] Peak posting hour: 0:00 (note: only available for ISO-format timestamps)
+[ENGAGEMENT] Average likes: 2494, shares: 1007, comments: 504
+[ENGAGEMENT] Likes-Shares correlation: -0.003 — weak relationship
+[ENGAGEMENT] Likes data missing for 2323 posts (19.4%)
+[BRAND] Most mentioned brand: Adidas (1,070 mentions)
+[BRAND] All 10 brands have significant presence — this is a multi-brand discussion forum
+[HASHTAGS] Top hashtag: #Fitness (753 uses)
+[HASHTAGS] 29 unique hashtags across 20531 total mentions
+[SENTIMENT] Positive: 4020 (33.5%), Negative: 3402 (28.3%)
+[SENTIMENT] Positive posts avg 2466 likes vs negative avg 2519 likes
+[USERS] Average posts per user: 8.0
+[USERS] Most active user: user_zqv2vrf5 (22 posts)
+[USERS] Follower count ↔ avg likes correlation: 0.011 — weak
+[GEOGRAPHY] Top location: Barcelona, Spain (56 users)
+[LANGUAGE] Most common language: Chinese (168 users, 11.2%)
+[LANGUAGE] 10 languages represented — truly global user base
+[ANOMALY] Posts with 0 shares or 0 comments: 18
+[ANOMALY] Previously had 525 posts with negative likes (now set to NaN during cleaning)
+[MISSING DATA] Highest missing: platform (14.9%), likes (19.4%), text_content (14.8%)
+[CONTENT] Most common post type: Product Review (2,052 posts)

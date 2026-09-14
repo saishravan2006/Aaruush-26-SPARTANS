@@ -1,0 +1,34 @@
+SOCIAL ENGINE DATA CLEANING LOG
+Generated: 2026-09-14T12:22:14.232757
+============================================================
+
+[CLEAN] LOAD
+        Users: 1500 rows, Posts: 12360 rows
+
+[CLEAN] REMOVE DUPLICATES | Affected: 360 rows
+        Dropped exact duplicate rows. These are pipeline re-ingestion artifacts from system failure.
+
+[CLEAN] STANDARDIZE TIMESTAMPS | Affected: 12000 rows
+        Converted all timestamps to datetime64. ISO 8601: ~4805, DD-MM-YYYY: ~0, Unix epoch: ~0. Unparseable: 0.
+
+[CLEAN] CLEAN TEXT — HTML TAGS | Affected: 646 rows
+        Removed <br>, <div> and other HTML tags from text_content. These are rendering artifacts, not part of actual posts.
+
+[CLEAN] CLEAN TEXT — ENCODING ARTIFACTS | Affected: 306 rows
+        Removed 'Ã©' UTF-8 mojibake artifacts from text_content. These are encoding corruption from the system failure.
+
+[CLEAN] CLEAN TEXT — WHITESPACE | Affected: 329 rows
+        Normalized newlines and excess whitespace in text_content. Embedded newlines are CSV parsing artifacts.
+
+[CLEAN] HANDLE NEGATIVE LIKES | Affected: 509 rows
+        Set negative like counts to NaN. Social media likes cannot be negative — these values represent data corruption during the system failure. Setting to NaN rather than fabricating replacement values.
+
+[CLEAN] CONVERT LIKES TO INTEGER | Affected: 12000 rows
+        Converted likes from float64 to nullable Int64. Likes are discrete count data, not continuous.
+
+[CLEAN] VALIDATE PLATFORMS | Affected: 1784 rows
+        Valid platforms: {'Instagram', 'Facebook', 'Twitter', 'Reddit', 'YouTube'}. Missing platform: 1784 rows. Invalid platform values (non-standard): 0. Missing platforms left as NaN — original data is unrecoverable.
+
+[CLEAN] VALIDATE USERS | Affected: 1500 rows
+        Users dataset: 1500 rows, no nulls, no duplicates. Converted account_created to datetime. All 1500 user IDs are unique. All user IDs in posts exist in users table (referential integrity OK).
+

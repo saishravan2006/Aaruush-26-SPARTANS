@@ -54,8 +54,8 @@ def create_report():
         # Add image to fit width (leaving margins)
         pdf.image(os.path.join(plots_dir, plot), x=10, w=190)
 
-    pdf.output('Social_Engine_EDA_Report.pdf')
-    print('Social_Engine_EDA_Report.pdf created successfully!')
+    pdf.output('Social_Engine_EDA_Report_v2.pdf')
+    print('Social_Engine_EDA_Report_v2.pdf created successfully!')
 
 if __name__ == '__main__':
     create_report()
