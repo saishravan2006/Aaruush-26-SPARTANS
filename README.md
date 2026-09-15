@@ -39,4 +39,44 @@ When reviewing this submission, we recommend following our pipeline in this orde
 | **Viral Anatomy** | Posts in the top 5% viral threshold (6,560+ engagement) surprisingly had slightly *shorter* text lengths than average posts. |
 
 ---
-*Built with ❤️ and cold coffee by SPARTANS*
+
+## Phase 2: SQL Analytics
+
+### How to Run the SQL Queries
+
+**Option A: Use the pre-built SQLite database (Recommended)**
+1. Download `social_engine.db` from this repo
+2. Open it in any SQLite tool:
+   - [DB Browser for SQLite](https://sqlitebrowser.org/) (GUI, free)
+   - [SQLiteStudio](https://sqlitestudio.pl/) (GUI, free)
+   - Command line: `sqlite3 social_engine.db`
+3. Copy and paste any query from `SQL_Queries.pdf` and run it
+
+**Option B: Rebuild from scratch**
+```bash
+python phase2_sql.py
+```
+This loads the CSVs into a fresh SQLite database and executes all 16 queries automatically.
+
+### Database Schema
+```
+users (user_id PK, location, language, account_created, follower_count)
+  |
+  |-- FK: user_id
+  |
+posts (post_id PK, user_id FK, platform, text_content, timestamp, likes, shares, comments)
+
+posts_corrupted (same schema, raw uncleaned data for H5 anomaly detection)
+```
+
+### Phase 2 Files
+| File | Description |
+|------|-------------|
+| `social_engine.db` | Pre-built SQLite database ready to query |
+| `phase2_sql.py` | Complete Python script that creates DB and runs all 16 SQL queries |
+| `SQL_Queries.pdf` | All SQL queries with schema design |
+| `Logic_Explanation.pdf` | Detailed logic explanation for each query |
+| `Phase2_Insight_Report.pdf` | Analytical insight report with 10 key findings |
+
+---
+*Built with cold coffee by SPARTANS*
